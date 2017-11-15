@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Landing Page</title>
+</head>
+    <link rel="stylesheet" href="styles.css">
+<body>
+    <div class="landingPageContainer">
+
+        <div class="header">
+            <img class="logo" src="./images/MetroNissanLogo.png" alt='logo'/>
+            <div class="callInfo">
+                <p>Call us today!</p>
+                <p class="number">+1(909) 962-8859</p>
+            </div>
+        </div>
+        
+        <div class="info">
+                <iframe  src="https://www.youtube.com/embed/ZEnhYyX0dpk?rel=0&loop=1" frameborder="0" allowfullscreen class='video'></iframe>
+                <!-- SENT -->
+                <div class="form" id="confirmationSent">
+                    <div class="checkmarkContainer">
+                        <svg width="57px" height="57px" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+                            <title>Group</title>
+                            <defs></defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Desktop" transform="translate(-182.000000, -526.000000)">
+                                    <g id="Group" transform="translate(182.000000, 526.000000)">
+                                        <g id="check" transform="translate(14.000000, 19.000000)"></g>
+                                        <circle id="Oval-2" fill="#009900" cx="28.5" cy="28.5" r="28.5"></circle>
+                                        <polyline id="Shape" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" points="44 18 23.375 39 14 29.4545455"></polyline>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="confirmationTextContainer">
+                        <p class="confirmText">SIGNED UP FOR VIP CLUB</p>
+                        <p class="confirmText2">You will receive a text message shortly</p>
+                        <p class="confirmText2">Please respond Y to opt into the program</p>
+                    </div>
+                </div>
+                <!-- ERROR -->
+                <div class="form" id="errorSending">
+                    <div class="checkmarkContainer">
+                        <svg width="57px" height="57px" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+                            <title>Group 2</title>
+                            <defs></defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Desktop" transform="translate(-182.000000, -526.000000)">
+                                    <g id="Group-2" transform="translate(182.000000, 526.000000)">
+                                        <g id="Group">
+                                            <g id="check" transform="translate(14.000000, 19.000000)"></g>
+                                            <circle id="Oval-2" fill="#C93333" cx="28.5" cy="28.5" r="28.5"></circle>
+                                        </g>
+                                        <g id="x" transform="translate(17.000000, 17.000000)" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M23,0 L0,23" id="Shape"></path>
+                                            <path d="M0,0 L23,23" id="Shape"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="errorTextContainer">
+                        <p class="errorText">Sorry, there was a problem sending your request</p>
+                        <p class="errorText">Please try again</p>
+                    </div>
+                    <button class="goBackBtn" onclick="resetForm()">Start Over</button>
+                </div>
+
+                <div class="form" id="formInfo">
+                    <p class="head" id="form">Get a $50 in-store credit when you join our VIP Club</p>
+                        <form id="enrollmentForm" class="inputs" onsubmit="submitForm()" action="javascript:void(0)">
+                                <input type="hidden" name="accesskey" value="1BG7KJW80SYQI4KFUQ9Q">
+                                <input type="hidden" name="returnURL" value="http://app.chatterspot.com/images/landingpage/static/success-metronissan.html">
+                                <input type="hidden" name="emailSendConfirmation" value="false">
+                                <input type="hidden" name="emailFromAddress" value="info@chatterspot.com">
+                                <input type="hidden" name="enterpriseID" value="">
+                                <input type="hidden" name="clientID" value="10362">
+                                <input type="hidden" name="webSignup" value="true">
+                                <input type="hidden" name="emailTemplateID" value="">
+                                <input type="hidden" name="birthdate" value="">
+                                <input type="hidden" name="address" value="">
+                                <input type="hidden" name="city" value="">
+                                <input type="hidden" name="state" value="">
+                                <input type="hidden" name="zipCode" value="">
+                                <input type="hidden" name="parentEmailAddress" value="">
+ 
+                            <div class="inputContainer">
+                                <input class="input" autocomplete="off" id="firstName" name="firstName" placeholder=" FIRST NAME"/>
+                                <span class="errorMessage" id='firstNameError'>This feild is required</span>
+                            </div>
+
+                            <div class="inputContainer">
+                                <input class="input" autocomplete="off" id="lastName" name="lastName" placeholder="LAST NAME"/>
+                                <span class="errorMessage" id='lastNameError'>This field is required</span>
+                            </div>
+
+                            <div class="inputContainer">
+                                <input class="input" autocomplete="off" id="emailAddress" name="emailAddress" placeholder="EMAIL ADDRESS"/>
+                                <span class="errorMessage" id='emailError'>Invalid Email</span>
+                            </div>
+
+                            <div class="inputContainer">
+                                <input class="input" autocomplete="off" id="cellPhone" name="cellPhone" placeholder="CELL PHONE" maxlength="15"/>
+                                <span class="errorMessage" id='numberError'>Invalid Number</span>
+                            </div>
+                            <button class="sendBtn" type="submit">Join</button>
+                        </form>
+
+                        
+                    </div>
+            </div>
+
+
+        <div class="footer">
+                <p>9440 Autoplex St, Monticlair, CA 91763</p>  
+                <p class="number">+1(909) 962-8859</p>            
+        </div>
+
+    </div>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script> 
+
+    <script>
+        document.getElementById('firstName').addEventListener('change', function(evt){
+            let firstNamePattern = /^[a-zA-Z]$/;
+            const value = evt.target.value;
+            if(!firstNamePattern.test(value)){
+                document.getElementById('firstNameError').style.display = 'flex'
+            }
+            console.log(evt.target.value)
+        })
+
+        document.getElementById('lastName').addEventListener('change', function(evt){
+            let lastNamePattern = /^[a-zA-Z]$/;
+            const value = evt.target.value;
+            if(!lastNamePattern.test(value)){
+                document.getElementById('lastNameError').style.display = 'flex'
+            }
+            console.log(evt.target.value)
+        })
+
+        document.getElementById('emailAddress').addEventListener('change',function(evt){
+            let emailPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+            let value = evt.target.value;
+            if(!emailPattern.test(value)){
+                document.getElementById('emailError').style.display='flex';
+            }
+            console.log(emailPattern.test(value));
+        })
+
+        document.getElementById('cellPhone').addEventListener('change',function(evt){
+            let phonePattern = /^[0-9]{10}$/;            
+            let value = evt.target.value;
+            if(!phonePattern.test(value)){
+                document.getElementById('numberError').style.display='flex';
+            }
+            console.log(emailPattern.test(value));
+        })
+
+        function resetForm(){
+            document.getElementById('enrollmentForm').reset()
+            document.getElementById("formInfo").style.display="flex";
+            document.getElementById("confirmationSent").style.display="none"
+            document.getElementById("errorSending").style.display="none";
+        }
+
+        function isFormValid(){
+            let emailValue = document.getElementById('emailAddress').value;
+            console.log('emailaddress value', document.getElementById('emailAddress').value)
+            let cellValue = document.getElementById('cellPhone').value;
+        }
+
+        function getFormData(){
+            let pairs = [];
+            let form = document.getElementById('enrollmentForm')
+            for ( let i = 0; i < form.elements.length; i++ ) {
+                let element = form.elements[i];
+                pairs.push(encodeURIComponent(element.name) + "=" + encodeURIComponent(element.value));
+            }
+            return pairs.join("&");
+        }
+
+        function submitForm(){
+            const form = getFormData();
+
+            fetch('https://api.chatterspot.com/MemberImporter.asmx/ImportMember', {
+                method: 'post',
+                headers: {
+                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                },
+                body: form
+            })
+            .then(function(response){
+                document.getElementById("formInfo").style.display="none";
+                document.getElementById("confirmationSent").style.display="flex"
+            })
+            .catch(function(err){
+                console.error(err)
+                document.getElementById("formInfo").style.display="FLEX";
+                document.getElementById("errorSending").style.display="none"
+            });
+        }
+    </script>
+</body>
+</html>

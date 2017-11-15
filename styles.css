@@ -1,0 +1,365 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Raleway:500,600,700);
+
+*{
+    margin: 0;
+}
+
+.landingPageContainer{
+    width: 100%;
+    height: auto;
+}
+
+/*------------- HEADER ------------*/
+.header{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    width: 80%;
+    margin-top: 20px;
+}
+
+.callInfo{
+    display: flex;
+    margin-top: 5px;
+    width: 60%;
+    justify-content: space-around;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: grey;
+}
+
+.number{
+    color: #008ed6;
+    font-family: 'Source Sans Pro', sans-serif;
+    cursor: pointer;
+}
+
+/* ---------ALERT-------------- */
+.alertContainer{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#alert{
+    display: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: red;
+}
+
+
+/* ----------BODY-------------- */
+
+.info{
+    width: 100%;
+    height: 90vh;
+    background: url("images/gears.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video{
+    width: 90%;
+    height: 50%;
+    background-color: grey;
+}
+
+.form{
+    width: 90%;
+    height: 40%;
+    background: rgba(255, 255, 255, .6);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head#form{
+    width: 80%;
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+}
+
+.inputs{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputContainer{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errorMessage{
+    display: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: red;
+}
+
+.input{
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+    padding-left: 10px;
+    border: .5px solid lightgrey;
+    background-color: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.input:focus{
+    outline: none;
+    border-left: 2px solid #008ed6;
+}
+
+.sendBtn{
+    background-color: red;
+    color: white;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 20px;
+    padding: 0 2rem;
+    font-size: 1.3rem;
+}
+
+.sendBtn:focus{
+    outline: none;
+}
+
+/* ---------CONFIRMATION ----------*/
+
+.form#confirmationSent{
+    width: 90%;
+    height: 40%;
+    background: rgba(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    animation: slideIn 1s;
+}
+
+@keyframes slideIn { 
+    0% { 
+        transform: translate3d(100%, 0, 0); 
+        visibility: visible; 
+    } 
+    100% { 
+        transform: translate3d(0, 0, 0); 
+    } 
+}
+
+.checkmarkContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.confirmationTextContainer{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    /* background-color: pink; */
+}
+.confirmText{
+    font-size: 1.3rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #009933;
+}
+
+.confirmText2{
+    font-size: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.goBackBtn{
+    border: none;
+    background-color: grey;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+}
+
+/* ---------ERROR--------- */
+
+.form#errorSending{
+    width: 90%;
+    height: 40%;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    animation: slideIn 1s;
+}
+
+.errorTextContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.errorText{
+    font-size: 1.3rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: red;
+    text-align: center;
+}
+
+.errorText2{
+    font-size: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 20px;
+}
+
+/* -----------FOOTER------------ */
+
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: grey;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.logo#footer{
+    width: 60%;
+}
+
+/* ---------TABLET--------- */
+
+@media screen and (min-width: 600px){
+    .header{
+        width: 100%;
+        height: 15%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .logo{
+        margin-left: 30px;
+        width: 50%;
+    }
+    .callInfo{
+        width: 50%;
+        font-size: 1.6rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .video{
+        width: 70%;
+        height: 40%;
+    }
+    .form{
+        width: 70%;
+        height: 50%;
+    }
+    .head#form{
+        font-size: 2rem;
+    }
+    .input{
+        width: 60%;
+        height: 50px;
+        font-size: .9rem;
+    }
+    .sendBtn{
+        font-size: 1.5rem;
+    }
+    .form#confirmationSent{
+        width: 70%;
+        height: 50%;
+        animation: slideIn 1s;
+    }
+    .form#errorSending {
+        width: 70%;
+        height: 50%;
+    }
+    .errorTextContainer {
+        margin: 2rem;
+    }
+    .confirmText {
+        font-size: 2.2rem;
+    }
+    .confirmText2 {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ---------LAPTOP--------- */
+@media screen and (min-width: 1100px){
+    .header{
+        width: 100%;
+        height: 30%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .logo{
+        margin-left: 30px;
+        width: 20%;
+    }
+    .callInfo{
+        width: 23%;
+        flex-direction: row;
+    }
+    .info{
+        height: 75vh;
+        flex-direction: row;
+    }
+    .video{
+        width: 40%;
+        height: 60%;
+    }
+    .form{
+        width: 30%;
+        height: 70%;
+    }
+    .footer{
+        font-size: 1.5rem;
+    }
+    .form#confirmationSent{
+        width: 30%;
+        height: 70%;
+        animation: slideIn 1s;
+    }
+    .form#errorSending {
+        width: 30%;
+        height: 70%;
+    }
+    .errorTextContainer {
+        margin: 2rem;
+    }
+    .confirmText {
+        font-size: 2.2rem;
+    }
+
+    .confirmText2{
+        font-size: 1.2rem;
+    }
+}
