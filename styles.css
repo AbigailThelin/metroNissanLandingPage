@@ -108,7 +108,15 @@
     align-items: center;
 }
 
+/* -------ERROR */
 .errorMessage{
+    display: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: .7rem;
+    color: red;
+    align-self: flex-start;
+}
+.errorMessage#emailError2{
     display: none;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: .7rem;
@@ -235,6 +243,9 @@
     font-size: 1rem;
     font-family: 'Source Sans Pro', sans-serif;
     margin-top: 20px;
+}
+.emailError2{
+    display: flex;
 }
 
 /* -----------FOOTER------------ */
