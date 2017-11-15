@@ -131,18 +131,20 @@
 
     <script>
         document.getElementById('firstName').addEventListener('change', function(evt){
+            document.getElementById('firstNameError').style.display='none'
             let firstNamePattern = /^[a-zA-Z]$/;
             const value = evt.target.value;
-            if(!firstNamePattern.test(value)){
+            if(!value){
                 document.getElementById('firstNameError').style.display = 'flex'
             }
             console.log(evt.target.value)
         })
 
-        document.getElementById('lastName').addEventListener('change', function(evt){
+        document.getElementById('lastNameError').addEventListener('change', function(evt){
+            document.getElementById('flastNameError').style.display='none'
             let lastNamePattern = /^[a-zA-Z]$/;
             const value = evt.target.value;
-            if(!lastNamePattern.test(value)){
+            if(!value){
                 document.getElementById('lastNameError').style.display = 'flex'
             }
             console.log(evt.target.value)
