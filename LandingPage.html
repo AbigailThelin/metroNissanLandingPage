@@ -109,7 +109,7 @@
                             </div>
 
                             <div class="inputContainer">
-                                <input class="input" autocomplete="off" id="cellPhone" name="cellPhone" placeholder="CELL PHONE" maxlength="15"/>
+                                <input class="input" autocomplete="off" id="cellPhone" name="cellPhone" placeholder="CELL PHONE"/>
                                 <span class="errorMessage" id='numberError'>Invalid Number</span>
                                 <span class="errorMessage" id='numberError2'>This field is required</span>
                             </div>
@@ -130,6 +130,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script> 
 
     <script>
+        // document.getElementById('cellPhone').addEventListener('change', function(e){
+
+        // })
+
         document.getElementById('firstName').addEventListener('change', function(evt){
             document.getElementById('firstNameError').style.display='none'
             let firstNamePattern = /^[a-zA-Z]$/;
@@ -167,14 +171,17 @@
         document.getElementById('cellPhone').addEventListener('change',function(evt){
             document.getElementById('numberError').style.display='none'
             document.getElementById('numberError2').style.display='none'
-            let phonePattern = /^[0-9]{10}$/;            
+
+            let phonePattern = /^[0-9]{10}$/;             
             let value = evt.target.value;
+            // let newValue = value.toString().match(/^\d{3}-\d{3}-\d{4}$/gm);
+
             if(!value){
                 document.getElementById('numberError2').style.display='flex'
             }else if(!phonePattern.test(value)){
                 document.getElementById('numberError').style.display='flex';
             }
-            // console.log(emailPattern.test(value));
+            console.log(value);
         })
 
         function resetForm(){
