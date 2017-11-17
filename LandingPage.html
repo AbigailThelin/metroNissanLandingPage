@@ -172,16 +172,16 @@
             document.getElementById('numberError').style.display='none'
             document.getElementById('numberError2').style.display='none'
 
-            let phonePattern = /^[0-9]{10}$/;             
-            let value = evt.target.value;
-            // let newValue = value.toString().match(/^\d{3}-\d{3}-\d{4}$/gm);
+            let phonePattern = /^[0-9]{10}$/;            
+            // let value = evt.target.value;
+            let newValue = evt.target.value.match(/^([0-9]{3})([0-9]{3})([0-9]{4})$/).join('-');
 
-            if(!value){
+            if(!newValue){
                 document.getElementById('numberError2').style.display='flex'
-            }else if(!phonePattern.test(value)){
+            }else if(!phonePattern.test(newValue)){
                 document.getElementById('numberError').style.display='flex';
             }
-            console.log(value);
+            console.log(newValue);
         })
 
         function resetForm(){
