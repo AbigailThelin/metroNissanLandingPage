@@ -150,8 +150,8 @@
             console.log(evt.target.value)
         })
 
-        document.getElementById('lastNameError').addEventListener('change', function(evt){
-            document.getElementById('flastNameError').style.display='none'
+        document.getElementById('lastName').addEventListener('change', function(evt){
+            document.getElementById('lastNameError').style.display='none'
             let lastNamePattern = /^[a-zA-Z]$/;
             const value = evt.target.value;
             if(!value){
@@ -179,8 +179,6 @@
 
             let phonePattern = /^[0-9]{10}$/;            
             let value = evt.target.value;
-            // let newValue = evt.target.value.(/^([0-9]{3})([0-9]{3})([0-9]{4})$/).join('-');
-
             if(!value){
                 document.getElementById('numberError2').style.display='flex'
             }else if(!phonePattern.test(value)){
