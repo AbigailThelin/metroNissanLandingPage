@@ -109,7 +109,7 @@
                             </div>
 
                             <div class="inputContainer">
-                                <input class="input" autocomplete="off" id="cellPhone" name="cellPhone" placeholder="CELL PHONE"/>
+                                <input class="input" autocomplete="off" id="cellPhone" name="cellPhone" placeholder="CELL PHONE" onblur="formatPhone(this);"/>
                                 <span class="errorMessage" id='numberError'>Invalid Number</span>
                                 <span class="errorMessage" id='numberError2'>This field is required</span>
                             </div>
@@ -130,9 +130,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script> 
 
     <script>
-        // document.getElementById('cellPhone').addEventListener('change', function(e){
 
-        // })
+        function formatPhone(obj) {
+            var numbers = obj.value.replace(/\D/g, ''),
+                char = {0:'(',3:') ',6:' - '};
+            obj.value = '';
+            for (var i = 0; i < numbers.length; i++) {
+                obj.value += (char[i]||'') + numbers[i];
+            }
+        }
 
         document.getElementById('firstName').addEventListener('change', function(evt){
             document.getElementById('firstNameError').style.display='none'
@@ -159,7 +165,6 @@
             document.getElementById('emailError2').style.display='none'
             let emailPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
             let value = evt.target.value;
-            debugger;
             if(!value){
                 document.getElementById('emailError2').style.display='flex'
             }else if(!emailPattern.test(value)){
@@ -173,12 +178,12 @@
             document.getElementById('numberError2').style.display='none'
 
             let phonePattern = /^[0-9]{10}$/;            
-            // let value = evt.target.value;
-            let newValue = evt.target.value.match(/^([0-9]{3})([0-9]{3})([0-9]{4})$/).join('-');
+            let value = evt.target.value;
+            // let newValue = evt.target.value.(/^([0-9]{3})([0-9]{3})([0-9]{4})$/).join('-');
 
-            if(!newValue){
+            if(!value){
                 document.getElementById('numberError2').style.display='flex'
-            }else if(!phonePattern.test(newValue)){
+            }else if(!phonePattern.test(value)){
                 document.getElementById('numberError').style.display='flex';
             }
             console.log(newValue);
